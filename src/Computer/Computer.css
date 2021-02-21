@@ -1,0 +1,43 @@
+
+.flexContainer  {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+    flex: 33%;
+
+  }
+
+  .ComputerH1{
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgb(209, 150, 40);
+    width: 100%;
+  }
+
+  .ComputerH2{
+    font-size: 20px;
+    color: rgb(108, 107, 107);
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .ComputerH3{
+    font-size: 25px;
+    color: rgb(91, 91, 91);
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+  
+
+  .ComputerImg{
+    height: 200px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    display: block;    
+  }
