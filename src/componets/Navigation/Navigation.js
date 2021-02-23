@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Navigation.css'
-import logo from '../images/logo.png'
+import logo from '../../images/logo.png'
 
 const navigation = (props) => (
     <div  className={classes.NavigationDiv}>

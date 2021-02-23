@@ -1,13 +1,13 @@
 import React,{Component} from 'react'
 import classes from './Computer.css'
-import asus from '../images/asus.jpg'
-import apple from '../images/apple.jpg'
-import lenovo from '../images/lenovo.jpg'
-import dell from '../images/dell.jpg'
-import hp from '../images/hp.jpg'
-import acer from '../images/acer.jpg'
-import UpgradeButton from '../UpradeButton/UpgradeButton'
-import Modal from '../Modal/Modal'
+import asus from '../../images/asus.jpg'
+import apple from '../../images/apple.jpg'
+import lenovo from '../../images/lenovo.jpg'
+import dell from '../../images/dell.jpg'
+import hp from '../../images/hp.jpg'
+import acer from '../../images/acer.jpg'
+import UpgradeButton from '../../componets/UpradeButton/UpgradeButton'
+import Modal from '../../componets/Modal/Modal'
 
 class Computer extends Component  {
     state ={

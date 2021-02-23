@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Computer from './Computer/Computer'
-import StartingButton from './StartingButton/StartingButton'
+import Computer from './containers/Computer/Computer'
+import StartingButton from './componets/StartingButton/StartingButton'
 import classes from './App.css'
-import Navigation from './Navigation/Navigation'
+import Navigation from './componets/Navigation/Navigation'
 class App extends Component {
   state = {
     computers: [

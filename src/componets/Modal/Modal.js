@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Modal.css';
 import Backdrop from '../Backdrop/Backdrop'
 import Aux from '../hoc/Aux1'
-import UpgradeChoice from '../UpgradeChoice/UpgradeChoice';
+import UpgradeChoice from '../../containers/UpgradeChoice/UpgradeChoice';
 
 const modal = ( props ) => (
     <Aux>
