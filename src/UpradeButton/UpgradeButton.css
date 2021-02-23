@@ -1,0 +1,43 @@
+.UpgradeButton{
+    background-color: rgb(216, 216, 216);
+    color: rgb(224, 154, 61);
+    cursor: pointer;
+    width: 30%;
+    height: 60px;
+    border:none;
+    border-radius: 40px;
+    box-shadow: 3px 3px 3px  #cacacb;
+font-size: 14px;
+font-weight: bold;
+font-family: 'Open Sans Condensed', sans-serif;
+margin-left: 50%;
+text-decoration: none;
+}
+.UpgradeButton:hover,
+.UpgradeButton:active
+{
+    background-color: rgb(224, 154, 61);
+    color: rgb(231, 231, 231);
+    outline: none;
+
+}
+
+
+.Price{
+    background-color: rgb(224, 154, 61);
+    color:rgb(231, 231, 231) ; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 5px;
+    box-shadow: 2px 2px 2px  #cacacb;
+}
+.Price:hover{
+    color: white;
+ 
+
+}
+.flexContainer{
+    display: flex ;
+    
+    margin:left;
+  
+  }

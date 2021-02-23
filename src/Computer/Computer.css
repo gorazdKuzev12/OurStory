@@ -41,3 +41,13 @@
     margin-top: 10px;
     display: block;    
   }
+
+  .ComputerButton{
+    padding: 15px;
+    border: none;
+    color: rgb(247, 245, 245);
+    background-color: rgb(204, 100, 39);
+    border-radius: 5px;
+
+  
+  }

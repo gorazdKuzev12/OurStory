@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Component} from 'react'
 import classes from './Computer.css'
 import asus from '../images/asus.jpg'
 import apple from '../images/apple.jpg'
@@ -6,12 +6,24 @@ import lenovo from '../images/lenovo.jpg'
 import dell from '../images/dell.jpg'
 import hp from '../images/hp.jpg'
 import acer from '../images/acer.jpg'
+import UpgradeButton from '../UpradeButton/UpgradeButton'
+import Modal from '../Modal/Modal'
+
+class Computer extends Component  {
+    state ={
+        upgrading: false
+    }
 
 
-
-const computer = (props) => {
+    upgradeHandler = () =>{
+        this.setState({upgrading:true})
+    }
+    upgradeCancledHandler = () =>{
+        this.setState({upgrading:false})
+    }
+   render(){
     let imageDisplay = null;
-    switch (props.name) {
+    switch (this.props.name) {
         case ('Asus'):
             imageDisplay = <img className={classes.ComputerImg} src={asus} alt="Computer" ></img>
             break;
@@ -32,16 +44,23 @@ const computer = (props) => {
             break;
         default:
             imageDisplay = <img src="../images/background.jpg" alt="Computer" ></img>
+    
+    }
+    let upgrade;
+    if(this.state.upgrading === true){
+        upgrade = (<Modal upgrading ={this.state.upgrading} startingPrice={this.props.startingPrice} clicked={this.upgradeCancledHandler}/>);
 
     }
     return (
         <div className={classes.flexContainer}>
-            <h1 className={classes.ComputerH1}>{props.name}</h1>
+            <h1 className={classes.ComputerH1}>{this.props.name}</h1>
             {imageDisplay}
-            <h2 className={classes.ComputerH2}>{props.year}</h2>
-            <h3 className={classes.ComputerH3}>Starting Price: <strong>{props.startingPrice}$</strong></h3>
+            <h2 className={classes.ComputerH2}>{this.props.year}</h2>
+            <UpgradeButton startingPrice={this.props.startingPrice} upgrading={this.upgradeHandler} ></UpgradeButton>
+            {upgrade}
         </div>)
+   }
 
 }
 
-export default computer;
+export default Computer;

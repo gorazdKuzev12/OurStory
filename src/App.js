@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Computer from './Computer/Computer'
 import StartingButton from './StartingButton/StartingButton'
 import classes from './App.css'
+import Navigation from './Navigation/Navigation'
 class App extends Component {
   state = {
     computers: [
@@ -30,13 +31,18 @@ class App extends Component {
 
     let computers = null;
     if (this.state.showComputers) {
-      computers = (<div className={classes.flexContainer}>
+      computers = (
+      <div>
+        <Navigation/>
+      <div className={classes.flexContainer}>
+      
         {this.state.computers.map(computer=>{
           return  <Computer
           name={computer.name}
           startingPrice={computer.startingPrice}
           year={computer.year} />
         })}
+      </div>
       </div>
 
       )
@@ -46,6 +52,7 @@ class App extends Component {
 
     return (
       <div className="App">
+      
         {computers}
         {start}
 

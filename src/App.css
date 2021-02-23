@@ -2,7 +2,7 @@
   display: flex ;
   flex-wrap: wrap;
   width: 1000px;
-  margin:auto;
+  margin: auto;
 
   box-shadow: 2px 2px #bdbdbdb8;
 }
