@@ -43,7 +43,7 @@ class Category extends Component  {
             imageDisplay = <img className={classes.ComputerImg} src={day} alt="Category" ></img>
             break;
         default:
-            imageDisplay = <img src="../images/background.jpg" alt="Category" ></img>
+            imageDisplay = <img src="../images/background.jpg" alt="Categoryee" ></img>
     
     }
     let upgrade;
