@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
-import Computer from './containers/Computer/Computer'
+import Categories from './containers/Categories/Categories'
 import StartingButton from './componets/StartingButton/StartingButton'
 import classes from './App.css'
 import Navigation from './componets/Navigation/Navigation'
+import Register from './componets/Navigation/Register/Register'
+import Login from './componets/Navigation/Login/Login'
+
 class App extends Component {
   state = {
-    computers: [
-      { name: 'Asus', startingPrice: 500, year: 2019 },
-      { name: 'Dell', startingPrice: 600, year: 2020 },
-      { name: 'Apple', startingPrice: 800, year: 2021 },
-      { name: 'Acer', startingPrice: 400, year: 2018 },
-      { name: 'HP', startingPrice: 400, year: 2019 },
-      { name: 'Lenovo', startingPrice: 450, year: 2020 }
+    categories: [
+      { name: 'Family', year: 2019 },
+      { name: 'Friends', year: 2020 },
+      { name: 'MyDay', year: 2021 },
+      { name: 'Colors', year: 2018 },
+      { name: 'Feelings', year: 2019 },
+      { name: 'Job', year: 2020 }
     ],
-    showComputers: false
+    showComputers: true,
+    showRegister: false,
+    showLogin: false
   }
   startButtonHandler = () => {
     this.setState({ showComputers: true })
+  }
+  startRegisterButtonHandler = () => {
+    this.setState({ showRegister: true, showComputers: false, showLogin: false })
+  }
+
+  startLoginButtonHandler = () => {
+    this.setState({ showLogin: true, showComputers: false, showRegister: false })
   }
 
   render() {
@@ -24,38 +36,59 @@ class App extends Component {
 
     let start = null;
 
-    if (this.state.showComputers === false) {
-      start = (<StartingButton startApproved={this.startButtonHandler} />)
+
+
+    let categories = null;
+    if (this.state.showComputers) {
+      categories = (
+        <div>
+          <Navigation registerApproved={this.startRegisterButtonHandler} loginApproved={this.startLoginButtonHandler}/>
+          <div className={classes.flexContainer}>
+
+            {this.state.categories.map(category => {
+              return <Categories
+                name={category.name}
+                startingPrice={category.startingPrice}
+                year={category.year} />
+            })}
+          </div>
+        </div>
+
+      )
     }
 
+    let register = null;
+    if (this.state.showRegister) {
+      register = (
+        <div>
+          <Navigation registerApproved={this.startRegisterButtonHandler} loginApproved={this.startLoginButtonHandler} />
+          <Register />
+        </div>
 
-    let computers = null;
-    if (this.state.showComputers) {
-      computers = (
-      <div>
-        <Navigation/>
-      <div className={classes.flexContainer}>
-      
-        {this.state.computers.map(computer=>{
-          return  <Computer
-          name={computer.name}
-          startingPrice={computer.startingPrice}
-          year={computer.year} />
-        })}
-      </div>
-      </div>
+      )
+    }
+    let login = null;
+    if (this.state.showLogin) {
+      login = (
+        <div>
+          <Navigation registerApproved={this.startRegisterButtonHandler} loginApproved={this.startLoginButtonHandler} />
+          <Login />
+        </div>
 
       )
     }
 
 
 
+
     return (
       <div className="App">
-      
-        {computers}
-        {start}
 
+        {categories}
+        {register}
+
+        {start}
+        {login}
 
 
       </div>
